@@ -43,20 +43,5 @@ public class ReadFile {
         return numberOfLines;
     }
 
-//    public String[] readWords() throws IOException {
-//        Scanner ScanFile = new Scanner(new FileReader(path));
-//        ArrayList<String> words=new ArrayList<String>();
-//        String theWord;
-//
-//
-//        while (ScanFile.hasNext()) {
-//            theWord=ScanFile.next();
-//            words.add(theWord);
-//
-//        }
-//
-//        return words;
 
-
-//      }
 }

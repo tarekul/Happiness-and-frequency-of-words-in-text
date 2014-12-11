@@ -2,6 +2,9 @@ package com.company;
 
 import java.io.IOException;
 
+
+
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,24 +22,46 @@ public class Main {
 //
 
         String file_name="testFile.rtf";
+        String file_name2="RandomDoc.rtf";
         String WriteFile="WriteTest.rtf";
+
 
         try{
             ReadFile file=new ReadFile(file_name);
             String[] arylines=file.OpenFile();
-            int lineCount=arylines.length;
+
             for(int i=0;i<arylines.length;i++){
                 System.out.println(arylines[i]);
             }
             System.out.println();
 
-            Frequency File=new Frequency(file_name);
+            Frequency File=new Frequency(file_name,WriteFile);
             File.freqWords();
             System.out.println();
 
-            File.writeToFile();
+            File.writeToFile(file_name);
             System.out.println();
-            File.happiness(lineCount);
+            File.happiness();
+
+            ReadFile fileX=new ReadFile(file_name2);
+            String[] arylines2=fileX.OpenFile();
+
+            for(int p=0;p<arylines2.length;p++){
+                System.out.println(arylines2[p]);
+            }
+            System.out.println();
+
+
+
+            Frequency File2=new Frequency(file_name2,WriteFile);
+            File2.freqWords();
+            System.out.println();
+            File2.writeToFile(file_name2);
+            System.out.println();
+            File2.happiness();
+
+
+
 
 
 
